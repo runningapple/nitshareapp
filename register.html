@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<link rel="stylesheet" href="css/jquery.mobile-1.3.2.min.css" />
+	<link rel="stylesheet" href="css/custom.css" />
 	<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
 	<script type="text/javascript" src="js/jquery.mobile-1.3.2.min.js"></script>
 	
@@ -11,10 +12,18 @@
 	<body>
 		<div data-role = "page" id="pagetwo">
 			<div data-role = "content">
-				<input type="text" name="account" id="account"/>
-				<input type="password" name="pwd" id="pwd" />
-				<input type="password" name="pwd" id="pwd" />
-				<div></div>
+				<div data-role = "fieldcontain">
+					<label for="account" class="gapsize">账号：</label>
+					<input type="text" name="account" class="gapsize" id="account" placeholder="手机号或邮箱"/>
+					<label for="pwd1" class="gapsize">密码：</label>
+					<input type="password" name="pwd1" class="gapsize" id="pwd1" placeholder="密码"/>
+					<label for="pwd2" class="gapsize">请再次输入密码：</label>
+					<input type="password" name="pwd2" class="gapsize" id="pwd2" placeholder="请再次输入密码"/>
+					<div data-role = "collapsible" data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u">
+						<h1>选填信息</h1>
+						<p>选填信息</p>
+					</div>
+				</div>
 				<input type="button" data-role = "button" id="rgbtn" value="Register" />
 			</div>
 		</div>
