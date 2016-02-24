@@ -1,7 +1,7 @@
 
 $(document).ready(function(){
 	$("#loginbtn").tap(function(){
-		var account = $("#username").val();
+		var account = $("#account").val();
 		var password = $("#pwd").val();
 		$.ajax({
 			type:"GET",
