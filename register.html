@@ -19,9 +19,24 @@
 					<input type="password" name="pwd1" class="gapsize" id="pwd1" placeholder="密码"/>
 					<label for="pwd2" class="gapsize">请再次输入密码：</label>
 					<input type="password" name="pwd2" class="gapsize" id="pwd2" placeholder="请再次输入密码"/>
-					<div data-role = "collapsible" data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u">
+					<div class="collapsiblediv" data-role = "collapsible" data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u">
 						<h1>选填信息</h1>
-						<p>选填信息</p>
+						<div data-role = "fieldcontain">
+							<label for="sid" class="gapsize" >学号：</label>
+							<input type="text" name="sid" class="gapsize" id="sid" placeholder="学号"/>
+							<label for="name" class="gapsize" >姓名：</label>
+							<input type="text" name="name" class="gapsize" id="name" placeholder="姓名" />
+							<label for="level" class="gapsize" >学级：</label>
+							<select name="level" id="level" data-native-menu = "false">
+								<option value="0">更早</option>
+								<option value="12">12级</option>
+								<option value="13">13级</option>
+								<option value="14">14级</option>
+								<option value="15">15级</option>
+								<option value="16">16级</option>
+								<option value="100">更后</option>
+							</select>
+						</div>
 					</div>
 				</div>
 				<input type="button" data-role = "button" id="rgbtn" value="Register" />
