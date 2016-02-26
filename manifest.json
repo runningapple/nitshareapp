@@ -1,7 +1,7 @@
-﻿{
+{
     "@platforms": ["android", "iPhone", "iPad"],
     "id": "H52A3A574",/*应用的标识，创建应用时自动生成，勿手动修改*/
-    "name": "nitshare",/*应用名称，程序桌面图标名称*/
+    "name": "nitshare20162261132",/*应用名称，程序桌面图标名称*/
     "version": {
         "name": "1.0",/*应用版本名称*/
         "code": ""
@@ -10,7 +10,7 @@
     "icons": {
         "72": "icon.png"
     },
-    "launch_path": "index.html",/*应用的入口页面，默认为根目录下的index.html；支持网络地址，必须以http://或https://开头*/
+    "launch_path": "login.html",/*应用的入口页面，默认为根目录下的index.html；支持网络地址，必须以http://或https://开头*/
     "developer": {
         "name": "",/*开发者名称*/
         "email": "",/*开发者邮箱地址*/
@@ -23,15 +23,11 @@
         "Audio": {
             "description": "访问麦克风"
         },
-        "Messaging":{
-        	"description": "短彩邮件插件"
-        },
+        
         "Cache": {
             "description": "管理应用缓存"
         },
-        "Camera": {
-            "description": "访问摄像头"
-        },
+        
         "Console": {
             "description": "跟踪调试输出日志"
         },
@@ -81,9 +77,7 @@
         "Zip": {
             "description": "文件压缩与解压缩"
         },
-        "Barcode": {
-            "description": "管理二维码扫描插件"
-        },
+        
         "Maps": {
             "description": "管理地图插件"
         },
@@ -199,5 +193,72 @@
                 }
             }
         }
-    }
+    },
+	"dependencies":{
+		"pages": {
+			"main.html": {
+				"href": "main.html",
+				"resources": [
+					"css/jquery.mobile-1.3.2.min.css",
+					"images/icons-18-white.png",
+					"images/icons-18-black.png",
+					"images/icons-36-white.png",
+					"images/icons-36-black.png",
+					"css/bootstrap.min.css",
+					"js/jquery-1.8.3.min.js",
+					"js/jquery.mobile-1.3.2.min.js",
+					"js/bootstrap.min.js",
+					"css/main.css",
+					"images/aa.jpg"
+				],
+				"priority": 0
+			},
+			"register.html": {
+				"href": "register.html",
+				"resources": [
+					"css/jquery.mobile-1.3.2.min.css",
+					"images/icons-18-white.png",
+					"images/icons-18-black.png",
+					"images/icons-36-white.png",
+					"images/icons-36-black.png",
+					"js/jquery-1.8.3.min.js",
+					"js/jquery.mobile-1.3.2.min.js",
+					"js/register.js",
+					"css/custom.css"
+				],
+				"priority": 1
+			},
+			"login.html": {
+				"href": "login.html",
+				"resources": [
+					"css/jquery.mobile-1.3.2.min.css",
+					"images/icons-18-white.png",
+					"images/icons-18-black.png",
+					"images/icons-36-white.png",
+					"images/icons-36-black.png",
+					"js/jquery-1.8.3.min.js",
+					"js/jquery.mobile-1.3.2.min.js",
+					"js/login.js"
+				],
+				"refer": [
+					"main.html",
+					"register.html"
+				],
+				"priority": 0
+			}
+		},
+		"idle": {
+			"resources": [
+				"images/ajax-loader.gif",
+				"index.html",
+				"css/register.css",
+				"README.md"
+			]
+		}
+	},
+	"unpackage":[
+	  "css/register.css",
+	  "README.md",
+	  "index.html"
+	]
 }

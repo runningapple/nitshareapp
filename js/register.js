@@ -12,7 +12,7 @@ $(document).ready(function(){
 		} 
 		$.ajax({
 			type:"get",
-			url:"http://localhost:8080/nitshare/serve/user.register",
+			url:"http://192.168.0.198:8080/nitshare/serve/user.register",
 			async:false,
 			data:{
 				"nickname":nickname,
