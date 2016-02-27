@@ -1,7 +1,25 @@
 
+html,body{
+	height: 100%;
+}
+
+body{
+	text-align: center;
+}
+
+p{
+	font-family: "微软雅黑";
+}
+
 .gapsize{
 	margin-top: 10px;
 	margin-bottom: 10px;
 	padding-top: 10px;
 	padding-bottom: 10px;
+}
+
+.page{
+	height: 100%;
+	display: -webkit-flex;
+	-webkit-flex-direction: column;
 }
