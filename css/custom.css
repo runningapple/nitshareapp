@@ -1,6 +1,8 @@
 
 html,body{
 	height: 100%;
+	margin: 0;
+	padding: 0;
 }
 
 body{
@@ -22,4 +24,12 @@ p{
 	height: 100%;
 	display: -webkit-flex;
 	-webkit-flex-direction: column;
+}
+
+/**
+ * 去除边框聚焦颜色
+ */
+
+input:focus {
+	outline: none;
 }

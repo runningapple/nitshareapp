@@ -1,0 +1,56 @@
+
+/**
+ * 搜索框居中
+ */
+.page > .searchdiv {
+	-webkit-flex: 1;
+	height: 100%;
+	font-style: nnormal;
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-pack: center;
+	-moz-box-pack: center;
+	-ms-flex-pack: center;
+	-webkit-justify-content: center;
+	justify-content: center;
+	margin: 0;
+	padding: 0;
+	/*background-color: red;*/
+}
+
+.page > .menuediv {
+	-webkit-flex: 1;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 90%;
+	background-color: blue;
+}
+
+.page > .contentdiv {
+	-webkit-flex: 9;
+	background-color: green;
+}
+
+.page > .searchdiv > .searchinput{
+	width: 62%;
+	margin-top: 1%;
+	margin-bottom: 1%;
+	border-radius: 6px;
+	font-size: 100%;
+	outline: none;
+	border-style: none;/*去除input框内的内部阴影*/
+}
+
+.page > .menuediv > .menuebtn{
+	margin: 0;
+	padding: 0;
+	width: 50%;
+	height: 100%;
+	float: right;
+	/*display: inline;*/
+	/*background-color: green;*/
+}

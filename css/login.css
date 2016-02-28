@@ -1,7 +1,8 @@
 /**
  * 标题样式
  */
-.page > .titlediv{
+
+.page > .titlediv {
 	-webkit-flex: 1.1;
 	height: 100%;
 	font-style: normal;
@@ -11,26 +12,24 @@
 	display: -ms-flexbox;
 	display: -webkit-flex;
 	display: flex;
-	
-	  /*垂直居中*/	
-	  /*老版本语法*/
-	  -webkit-box-align: center; 
-	  -moz-box-align: center;
-	  /*混合版本语法*/
-	  -ms-flex-align: center; 
-	  /*新版本语法*/
-	  -webkit-align-items: center;
-	  align-items: center;
-  	
-	  /*水平居中*/
-	  /*老版本语法*/
-	  -webkit-box-pack: center; 
-	  -moz-box-pack: center; 
-	  /*混合版本语法*/
-	  -ms-flex-pack: center; 
-	  /*新版本语法*/
-	  -webkit-justify-content: center;
-	  justify-content: center;  	
+	/*垂直居中*/
+	/*老版本语法*/
+	-webkit-box-align: center;
+	-moz-box-align: center;
+	/*混合版本语法*/
+	-ms-flex-align: center;
+	/*新版本语法*/
+	-webkit-align-items: center;
+	align-items: center;
+	/*水平居中*/
+	/*老版本语法*/
+	-webkit-box-pack: center;
+	-moz-box-pack: center;
+	/*混合版本语法*/
+	-ms-flex-pack: center;
+	/*新版本语法*/
+	-webkit-justify-content: center;
+	justify-content: center;
 	/*margin-left: auto;*/
 	/*margin-right: auto;*/
 	/*background-color: blue;*/
@@ -40,40 +39,39 @@
 	-webkit-user-select: none;
 	-moz-user-select: none;
 	-ms-user-select: none;
-	user-select:none;
-	
+	user-select: none;
 	margin-bottom: 0;
 	padding-bottom: 0;
 }
 
+
 /**
  * 内容区div样式
  */
-.page > .content{
-	-webkit-flex:2;
+
+.page > .content {
+	-webkit-flex: 2;
 	height: 100%;
 	/*background-color:white;*/
 	text-align: center;
 }
 
-.page > .content > .usernamediv,.passworddiv,.loginbtndiv{
+.page > .content > .usernamediv,
+.passworddiv,
+.loginbtndiv {
 	height: 15%;
 	margin-bottom: 0;
 	padding-bottom: 0;
 	/*background-color: red;*/
 }
 
-/**
- * 去除边框聚焦颜色
- */
-input:focus{
-	outline: none;
-}
 
 /**
  * 输入框样式
  */
-input[type="text"], input[type="password"]{
+
+input[type="text"],
+input[type="password"] {
 	width: 90%;
 	border-left: hidden;
 	border-right: hidden;
@@ -84,14 +82,16 @@ input[type="text"], input[type="password"]{
 	color: #555;
 }
 
-input[type="password"]{
+input[type="password"] {
 	border-top: hidden;
 }
+
 
 /**
  * 按钮样式
  */
-input[type="button"]{
+
+input[type="button"] {
 	width: 85%;
 	font-size: 100%;
 	height: 80%;
@@ -101,27 +101,25 @@ input[type="button"]{
 	border-radius: 12px;
 }
 
-input[type="button"]:hover{
+input[type="button"]:hover {
 	background: #00CC99;
 }
 
-h1{
-	  display: -webkit-box; 
-	  display: -moz-box;
-	  display: -ms-flexbox;
-	  display: -webkit-flex;
-	  display: flex;
-	 
-	  -webkit-box-align: center; 
-	  -moz-box-align: center;
-	  -ms-flex-align: center;
-	  -webkit-align-items: center;
-	  align-items: center;
-	
-	  height: 10rem;	
+h1 {
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-align: center;
+	-moz-box-align: center;
+	-ms-flex-align: center;
+	-webkit-align-items: center;
+	align-items: center;
+	height: 10rem;
 }
 
-img{
+img {
 	margin-bottom: 0;
 	margin-top: 0;
 	padding-bottom: 0;
