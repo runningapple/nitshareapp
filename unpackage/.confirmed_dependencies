@@ -1,0 +1,42 @@
+{
+  "main.html": {
+    "href": "main.html",
+    "resources": [
+      "css/jquery.mobile-1.3.2.min.css",
+      "css/bootstrap.min.css",
+      "js/jquery-1.8.3.min.js",
+      "js/jquery.mobile-1.3.2.min.js",
+      "js/bootstrap.min.js",
+      "css/main.css",
+      "images/aa.jpg"
+    ],
+    "refer": [],
+    "priority": 0
+  },
+  "register.html": {
+    "href": "register.html",
+    "resources": [
+      "css/jquery.mobile-1.3.2.min.css",
+      "js/jquery-1.8.3.min.js",
+      "js/jquery.mobile-1.3.2.min.js",
+      "js/register.js",
+      "css/custom.css"
+    ],
+    "refer": [],
+    "priority": 0
+  },
+  "login.html": {
+    "href": "login.html",
+    "resources": [
+      "css/jquery.mobile-1.3.2.min.css",
+      "js/jquery-1.8.3.min.js",
+      "js/jquery.mobile-1.3.2.min.js",
+      "js/login.js"
+    ],
+    "refer": [
+      "main.html",
+      "register.html"
+    ],
+    "priority": 0
+  }
+}
