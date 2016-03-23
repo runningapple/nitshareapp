@@ -95,7 +95,7 @@ document.addEventListener('touchmove', function (e) { e.preventDefault(); }, fal
 //document.addEventListener('DOMContentLoaded', function () { setTimeout(loaded, 200); }, false);
 
 $(document).ready(function(){
-	setTimeout(loaded, 200);
+//	setTimeout(loaded, 200);
 	$("li").css("line-height",($(window).height()/3.2)+"px");
 //	alert($("#thelist").height()/2+" "+$("#aa").height());
 //	$("#loadmore").click(function(){
