@@ -10,7 +10,7 @@ function pullDownAction () {
 
 		for (i=0; i<3; i++) {
 			li = document.createElement('li');
-			li.innerText = 'Generated row ' + (++generatedCount);
+			li.innerText = 'Grow ' + (++generatedCount);
 			el.insertBefore(li, el.childNodes[0]);
 		}
 		
@@ -25,10 +25,11 @@ function pullUpAction () {
 
 		for (i=0; i<3; i++) {
 			li = document.createElement('li');
-			li.innerText = 'Generated row ' + (++generatedCount);
+			li.innerText = 'Grow ' + (++generatedCount);
 			el.appendChild(li, el.childNodes[0]);
 		}
-		
+//		更新方块高度
+		$("li").css("line-height",($(window).height()/3.2)+"px");
 		myScroll.refresh();		// Remember to refresh when contents are loaded (ie: on ajax completion)
 	}, 1000);	// <-- Simulate network congestion, remove setTimeout from production!
 }
@@ -40,7 +41,10 @@ function loaded() {
 	pullUpOffset = pullUpEl.offsetHeight;
 	
 	myScroll = new iScroll('wrapper', {
-		useTransition: true,
+		snap: 'li',
+		hScrollbar: false,
+		vScrollbar: false,
+		useTransition: false,
 		topOffset: pullDownOffset,
 		onRefresh: function () {
 			if (pullDownEl.className.match('loading')) {
@@ -88,12 +92,15 @@ function loaded() {
 
 document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
 
-document.addEventListener('DOMContentLoaded', function () { setTimeout(loaded, 200); }, false);
+//document.addEventListener('DOMContentLoaded', function () { setTimeout(loaded, 200); }, false);
 
 $(document).ready(function(){
-	$("#loadmore").click(function(){
-		$("#loadmore").before("<div>a</div>");
-	});
+	setTimeout(loaded, 200);
+	$("li").css("line-height",($(window).height()/3.2)+"px");
+//	alert($("#thelist").height()/2+" "+$("#aa").height());
+//	$("#loadmore").click(function(){
+//		$("#loadmore").before("<div>a</div>");
+//	});
 	
 });
 
