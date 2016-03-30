@@ -10,7 +10,7 @@ $(document).ready(function(){
 	function loaded () {
 		pullDownEl = document.getElementById('pullDown');
 		pullDownOffset = pullDownEl.offsetHeight;
-		pullUpEl = document.getElementById('pullUp');	
+		pullUpEl = document.getElementById('pullUp');
 		pullUpOffset = pullUpEl.offsetHeight;
 		
 		myScroll = new iScroll('wrapper',{
@@ -123,7 +123,7 @@ $(document).ready(function(){
 		setTimeout(function () {	// <-- Simulate network congestion, remove setTimeout from production!
 			var el, li, i;
 			el = document.getElementById('thelist');
-			for (i=0; i<10; i++) {
+			for (i=0; i<5; i++) {
 				li = document.createElement('li');
 				li.innerText = 'Generated row ' + (++generatedCount);
 				el.appendChild(li, el.childNodes[0]);

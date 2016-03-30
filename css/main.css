@@ -1,1 +1,167 @@
+html,body{
+	/*position: relative;*/
+	height: 100%;
+	padding: 0;
+	margin: 0;
+}
 
+#web-view{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-flex-flow: column;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+#header{
+	width: 100%;
+	height: 100px;
+	background-color: white;
+	text-align: center;
+	line-height: 90px;
+	color: #fff;
+	position: relative;
+}
+
+#header span{
+	color: black;
+	font-size: 40px;
+}
+
+#footer{
+	height: 150px;
+	background-color: white;
+	text-align: center;
+	position: relative;
+}
+
+#footer span{
+	color: black;
+	font-size: 50px;
+}
+
+#main{
+	-webkit-box-flex: 1;
+	-webkit-flex: 1;
+	flex: 1;
+	background-color: gray;
+	height: 100%;
+	width: 100%;
+	position: relative;
+}
+
+/*#myFrame {
+	position:absolute;
+	top:0; left:0;
+}*/
+
+#wrapper {
+	position:absolute; z-index:1;
+	top:10px; 
+	bottom:10px; 
+	left: 0; 
+	right: 0;
+	width:100%;
+	background:#555;
+	overflow:auto;
+}
+
+#scroller {
+	position:relative;
+/*	-webkit-touch-callout:none;*/
+	-webkit-tap-highlight-color:rgba(0,0,0,0);
+	float:left;
+	width:100%;
+	padding:0;
+}
+
+#scroller ul {
+	position:relative;
+	list-style:none;
+	padding:0;
+	margin:0;
+	width:100%;
+	text-align: center;
+}
+
+#scroller li {
+	padding:0;
+	margin: 0;
+	/*padding-left: 20px;*/
+	/*height:40px;*/
+	/*line-height:40px;*/
+	border-bottom:1px solid #ccc;
+	border-top:1px solid #fff;
+	background-color:#fafafa;
+	/*font-size:14px;*/
+	text-align: center;
+	border: none;
+	/*float: left;*/
+}
+
+
+.item{
+	float: left;
+	width: 48%;
+	/*height: 600px;*/
+	padding: 5px;
+	background-color: darkgrey;
+}
+
+.itempic{
+	/*width: 100%;*/
+	height: 75%;
+	background-color: goldenrod;
+}
+
+.itemdes{
+	height: 23%;
+	background-color: gray;
+	padding: 0;
+	margin: 0;
+	font-size: 40px;
+}
+
+
+.itempic img{
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+
+/**
+ *
+ * 下拉样式 Pull down styles
+ *
+ */
+#pullDown, #pullUp {
+	background:#fff;
+	height:20px;
+	line-height:20px;
+	padding:5px 10px;
+	border-bottom:1px solid #ccc;
+	font-weight:bold;
+	font-size:30px;
+	color:#888;
+	text-align: center;
+}
+
+/*#pullDown .pullDownIcon, #pullUp .pullUpIcon  {
+	display:block; float:left;
+	width:40px; height:100px;
+	-webkit-background-size:40px 80px; background-size:40px 80px;
+	-webkit-transition-property:-webkit-transform;
+	-webkit-transition-duration:250ms;	
+}*/
+
+
+
+@-webkit-keyframes loading {
+	from { -webkit-transform:rotate(0deg) translateZ(0); }
+	to { -webkit-transform:rotate(360deg) translateZ(0); }
+}
