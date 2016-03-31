@@ -14,26 +14,27 @@ $(document).ready(function(){
 		
 		myScroll = new iScroll('wrapper',{
 //			scrollbarClass: 'myScrollbar',
-			hScrollbar:false,
+//			hScrollbar:false,
 			vScrollbar:false,
-			useTransition: false,
+			useTransition: true,
 			startX: 0,
 			startY: 0,
 			topOffset: pullDownOffset,
 			onScrollMove: function () {
-				if (this.y > 5 && !pullDownEl.className.match('flip')) {
+				console.log(this.y);
+				if (this.y > 50 && !pullDownEl.className.match('flip')) {
 					pullDownEl.className = 'flip';
 					pullDownEl.querySelector('.pullDownLabel').innerHTML = '松手开始更新...';
 					this.minScrollY = 0;
-				} else if (this.y < 5 && pullDownEl.className.match('flip')) {
+				} else if (this.y < 50 && pullDownEl.className.match('flip')) {
 					pullDownEl.className = '';
 					pullDownEl.querySelector('.pullDownLabel').innerHTML = '下拉刷新...';
 					this.minScrollY = -pullDownOffset;
-				} else if (this.y < (this.maxScrollY - 5) && !pullUpEl.className.match('flip')) {
+				} else if (this.y < (this.maxScrollY - 50) && !pullUpEl.className.match('flip')) {
 					pullUpEl.className = 'flip';
 					pullUpEl.querySelector('.pullUpLabel').innerHTML = '松手开始更新...';
 					this.maxScrollY = this.maxScrollY;
-				} else if (this.y > (this.maxScrollY + 5) && pullUpEl.className.match('flip')) {
+				} else if (this.y > (this.maxScrollY + 50) && pullUpEl.className.match('flip')) {
 					pullUpEl.className = '';
 					pullUpEl.querySelector('.pullUpLabel').innerHTML = '上拉加载更多...';
 					this.maxScrollY = pullUpOffset;
@@ -53,25 +54,29 @@ $(document).ready(function(){
 			
 		});
 		setTimeout(function () { document.getElementById('wrapper').style.left = '0'; }, 800);
-//		$(".pullDownLabel").css("height",$("#header").height()-3+"px");
-//		$("#pullUp").css("height","99px");
-//	$("#footer").css("height","90px");
 	}
 	
 	setTimeout(loaded, 200);
 	
-	$("#thelist").css("width",$("#wrapper").width()+"px");
-	$("#pullDown").css("width",$("#wrapper").width()+"px");
-	$("#pullUp").css("width",$("#wrapper").width()+"px");
-	$(".item").css("height",$("#thelist").height()/2.5+"px");
-	$("li").css("padding-left",($("#thelist").width()-$(".item").width()*2)/2+"px");
-//	alert($("#main").height());
+	var contentWidth = $("#web-view",window.parent.document).width();
+	var contentHeight = $("#web-view",window.parent.document).height()-$("#header",window.parent.document).height()-$("#footer",window.parent.document).height();
+	
+	$("#thelist").css("width",contentWidth+"px");
+	$("#pullDown").css("width",contentWidth+"px");
+	$("#pullUp").css("width",contentWidth+"px");
+	setupCss();
+	
+	function setupCss(){
+		$(".item").css("height",contentHeight/2.5+"px");
+		$("li").css("padding-left","15px");//除以2可能还不够对称		
+	}
+
 
 	function pullDownAction () {
 		setTimeout(function () {	// <-- Simulate network congestion, remove setTimeout from production!
 			var el, li, i;
 			el = document.getElementById('thelist');
-	
+
 			for (i=0; i<3; i++) {
 				li = document.createElement('li');
 				li.innerText = 'Generated row ' + (++generatedCount);
@@ -79,20 +84,28 @@ $(document).ready(function(){
 			}
 			
 			myScroll.refresh();		//数据加载完成后，调用界面更新方法   Remember to refresh when contents are loaded (ie: on ajax completion)
+			setupCss();
 		}, 200);	// <-- Simulate network congestion, remove setTimeout from production!
 	}
 	
 	function pullUpAction () {
 		setTimeout(function () {	// <-- Simulate network congestion, remove setTimeout from production!
-			var el, li, i;
-			el = document.getElementById('thelist');
-			for (i=0; i<5; i++) {
-				li = document.createElement('li');
-				li.innerText = 'Generated row ' + (++generatedCount);
-				el.appendChild(li, el.childNodes[0]);
-			}
+			var addtext = '\
+					<li>\
+						<div class="item">\
+							<div class="itempic">\
+								<img src="images/aa.jpg"/>\
+							</div>\
+							<div class="itemdes">\
+								<span>描述</span>\
+							</div>\
+						</div>\
+					</li>\
+					';
+			$("#thelist").append(addtext+addtext);
 			
 			myScroll.refresh();		// 数据加载完成后，调用界面更新方法 Remember to refresh when contents are loaded (ie: on ajax completion)
+			setupCss();
 		}, 200);	// <-- Simulate network congestion, remove setTimeout from production!
 	}
 
@@ -108,7 +121,4 @@ $(document).ready(function(){
 		}
 	}
 
-//	alert($(window).height());
-//	alert($(window).height()+" "+$("#header").height()+" "+$("#footer").height());
-//	$(".item").height(($("#main").height()/2)-10);
 });
