@@ -6,6 +6,9 @@ var myScroll,
 	generatedCount = 0;
 	
 $(document).ready(function(){
+	/*记录当前页数*/
+	var pageIndex = parseInt("0");
+	
 	function loaded () {
 		pullDownEl = document.getElementById('pullDown');
 		pullDownOffset = pullDownEl.offsetHeight;
@@ -21,7 +24,7 @@ $(document).ready(function(){
 			startY: 0,
 			topOffset: pullDownOffset,
 			onScrollMove: function () {
-				console.log(this.y);
+//				console.log(this.y);
 				if (this.y > 50 && !pullDownEl.className.match('flip')) {
 					pullDownEl.className = 'flip';
 					pullDownEl.querySelector('.pullDownLabel').innerHTML = '松手开始更新...';
@@ -73,6 +76,7 @@ $(document).ready(function(){
 
 
 	function pullDownAction () {
+
 		setTimeout(function () {	// <-- Simulate network congestion, remove setTimeout from production!
 			var el, li, i;
 			el = document.getElementById('thelist');
@@ -90,22 +94,42 @@ $(document).ready(function(){
 	
 	function pullUpAction () {
 		setTimeout(function () {	// <-- Simulate network congestion, remove setTimeout from production!
-			var addtext = '\
-					<li>\
-						<div class="item">\
-							<div class="itempic">\
-								<img src="images/aa.jpg"/>\
-							</div>\
-							<div class="itemdes">\
-								<span>描述</span>\
-							</div>\
-						</div>\
-					</li>\
-					';
-			$("#thelist").append(addtext+addtext);
-			
-			myScroll.refresh();		// 数据加载完成后，调用界面更新方法 Remember to refresh when contents are loaded (ie: on ajax completion)
-			setupCss();
+			$.ajax({
+				type:"get",
+				url:"http://192.168.0.198:8080/nitshare/serve/commodity.get",
+				async:true,//异步刷新
+				data:{
+					"page": pageIndex,
+					"size": "4",
+				},
+				jsonpCallback:'callback',
+				dataType:'jsonp',
+				success:function(data){
+//					alert(data[0].imgUrl0);
+					for (var i = 0; i < data.length; i++){
+						var addtext = '\
+								<li>\
+									<div class="item">\
+										<div class="itempic">\
+											<img src="'+data[i].imgUrl0+'"/>\
+										</div>\
+										<div class="itemdes">\
+											<span>描述</span>\
+										</div>\
+									</div>\
+								</li>\
+								';
+						
+						$("#thelist").append(addtext);
+						myScroll.refresh();		// 数据加载完成后，调用界面更新方法 Remember to refresh when contents are loaded (ie: on ajax completion)
+						setupCss();
+					}
+					pageIndex++;
+				},
+				error:function(XMLHttpRequest, textStatus, errorThrown, data){
+					alert(errorThrown);
+				}
+			});
 		}, 200);	// <-- Simulate network congestion, remove setTimeout from production!
 	}
 
