@@ -71,7 +71,7 @@ $(document).ready(function(){
 	
 	function setupCss(){
 		$(".item").css("height",contentHeight/2.5+"px");
-		$("li").css("padding-left","15px");//除以2可能还不够对称		
+		$("li").css("padding-left","15px");//除以2可能还不够对称
 	}
 
 
@@ -114,7 +114,12 @@ $(document).ready(function(){
 											<img src="'+data[i].imgUrl0+'"/>\
 										</div>\
 										<div class="itemdes">\
-											<span>描述</span>\
+											<div class="itemName">'+data[i].cname+'</div>\
+											<div class="itemStatues">软件122</div>\
+											<div class="itemTradePP">\
+												<span class="itemPlace">'+data[i].tradePlace+'</span>\
+												<span class="itemPrice">￥'+data[i].price+'</span>\
+											</div>\
 										</div>\
 									</div>\
 								</li>\

@@ -259,6 +259,7 @@
 	"unpackage":[
 	  "css/register.css",
 	  "README.md",
-	  "index.html"
+	  "index.html",
+	  "images/ajax-loader.gif"
 	]
 }

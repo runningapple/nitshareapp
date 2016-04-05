@@ -5,6 +5,11 @@ html,body{
 	margin: 0;
 }
 
+head{
+	padding: 0;
+	margin: 0;
+	height: 0;
+}
 
 #wrapper {
 	position:absolute; 
@@ -62,15 +67,18 @@ html,body{
 
 .itempic{
 	/*width: 100%;*/
-	height: 75%;
+	height: 70%;
 	background-color: goldenrod;
 }
 
 .itemdes{
-	height: 23%;
-	background-color: #F2F2F2;
+	height: 28%;
+	background-color: #E0EEEE;
 	padding: 0;
 	margin: 0;
+	padding-top: 10px;
+	padding-left: 15px;
+	padding-right: 15px;
 	font-size: 40px;
 }
 
@@ -82,6 +90,41 @@ html,body{
 	padding: 0;
 }
 
+.itemName {
+	font-size: 40px;
+	text-align: left;
+	color: #1C826C;
+	font-weight: bold;
+	font-family: "宋体";
+	padding-top: 5px;
+}
+
+.itemStatues {
+	opacity: 0.8;
+	text-align: left;
+	color: #666666;
+	font-family: "宋体";
+	padding-top: 5px;
+}
+
+.itemTradePP{
+	padding-top: 5px;
+}
+
+.itemPlace {
+	float: left;
+	font-size: 40px;
+	color: #666666;
+	font-weight: 500;
+	font-family: "宋体";
+}
+
+.itemPrice {
+	float: right;
+	font-size: 48px;
+	color: #EB5055;
+	font-weight: bold;
+}
 
 /**
  *
