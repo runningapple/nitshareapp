@@ -63,7 +63,7 @@ $(document).ready(function(){
 	
 	var contentWidth = $("#web-view",window.parent.document).width();
 	var contentHeight = $("#web-view",window.parent.document).height()-$("#header",window.parent.document).height()-$("#footer",window.parent.document).height();
-	
+//	alert(contentWidth+" "+contentHeight);
 	$("#thelist").css("width",contentWidth+"px");
 	$("#pullDown").css("width",contentWidth+"px");
 	$("#pullUp").css("width",contentWidth+"px");
@@ -71,7 +71,7 @@ $(document).ready(function(){
 	
 	function setupCss(){
 		$(".item").css("height",contentHeight/2.5+"px");
-		$("li").css("padding-left","15px");//除以2可能还不够对称
+		$("li").css("padding-left","5px");//除以2可能还不够对称
 	}
 
 

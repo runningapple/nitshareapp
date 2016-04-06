@@ -1,16 +1,10 @@
 html,body{
-	/*position: relative;*/
 	height: 100%;
 	padding: 0;
 	margin: 0;
 }
 
 #web-view{
-	display: -webkit-box;
-	display: -webkit-flex;
-	display: flex;
-	-webkit-box-orient: vertical;
-	-webkit-flex-flow: column;
 	height: 100%;
 	margin: 0;
 	padding: 0;
@@ -18,48 +12,47 @@ html,body{
 
 #header{
 	width: 100%;
-	height: 100px;
+	height: 40px;
 	background-color: #B2DFEE;
 	text-align: center;
-	line-height: 90px;
+	line-height: 35px;
 	color: #fff;
-	position: relative;
+	top: 0;
+	position: absolute;
 }
 
 #header span{
 	color: white;
-	font-size: 40px;
+	margin-top: 5px;
+	font-size: 20px;
 	font-weight: 500;
 	font-family: "宋体";
 }
 
 #footer{
 	background-color: #B2DFEE;
-	height: 170px;
+	height: 65px;
+	width: 100%;
+	padding-top: 0;
+	margin-top: 0;
 	text-align: center;
-	position: relative;
+	position: absolute;
 	opacity: 0.8;
-}
-
-#footer span{
-	color: black;
-	font-size: 50px;
+	bottom: 0;
 }
 
 #main{
-	-webkit-box-flex: 1;
-	-webkit-flex: 1;
-	flex: 1;
-	background-color: #EEE9BF;
 	height: 100%;
 	width: 100%;
-	position: relative;
+	position: absolute;
+	top: 30px;
 }
 
 #iframepage{
 	margin: 0;
 	padding: 0;
 	border: none;
+	
 }
 
 #footer,form{
@@ -70,10 +63,12 @@ html,body{
 }
 
 #footer form{
-	padding-top: 8px;
 	height: 100%;
 	width: 100%;
 	font-weight: bold;
+	margin-top: 0;
+	padding-top: 0;
+	
 }
 
 img,a,span{
@@ -81,36 +76,35 @@ img,a,span{
 }
 
 #footer input[type="radio"] + a p{
-	height:90px;
+	height:60px;
 	background-repeat:no-repeat; 
 	background-position:center top;
-	-webkit-background-size:auto 85px;
+	-webkit-background-size:auto 55px;
 	/*-webkit-transition-duration:200ms;*/
 }
 
 .home{
 	background-image: url(../images/home.png);
-	margin-top: 15px;
-	margin-bottom: 15px;
-	/*padding-bottom: 5px;*/
+	margin-top: 6px;
+	margin-bottom: 10px;
 }
 
 .category{
 	background-image: url(../images/categorize.png);
-	margin-top: 15px;
-	margin-bottom: 15px;	
+	margin-top: 6px;
+	margin-bottom: 10px;	
 }
 
 .release{
 	background-image: url(../images/release.png);
-	margin-top: 15px;
-	margin-bottom: 15px;	
+	margin-top: 6px;
+	margin-bottom: 10px;	
 }
 
 .mine{
 	background-image: url(../images/person.png);
-	margin-top: 15px;
-	margin-bottom: 15px;	
+	margin-top: 6px;
+	margin-bottom: 10px;	
 }
 
 form a{
@@ -124,7 +118,6 @@ input[type="radio"]{
 }
 
 #footer input[type="radio"] + a center{
-	color: #000;
 	opacity: 0.3;
 	/*-webkit-transition-duration:200ms;*/
 }
