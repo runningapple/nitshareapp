@@ -2,12 +2,15 @@ document.addEventListener('touchmove', function (e) { e.preventDefault(); }, fal
 
 $(document).ready(function(){
 	
+	$("body").css("height",$(window).height());
+	
 	$("a").click(function(){
 		var name = $(this).attr("name")
 		radioSelect("#footer_"+name);
 		switch (name){
 			case "home":
 //				alert("首页");
+				$("#iframepage").attr("src","homePage.html");
 				break;
 			case "category":
 //				alert("分类");
@@ -17,6 +20,7 @@ $(document).ready(function(){
 				break;
 			case "mine":
 //				alert("个人");
+				$("#iframepage").attr("src","userPage.html");
 				break;
 		}
 	});
