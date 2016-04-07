@@ -3,6 +3,7 @@ document.addEventListener('touchmove', function (e) { e.preventDefault(); }, fal
 $(document).ready(function(){
 	
 	$("body").css("height",$(window).height());
+	FastClick.attach(document.body);
 	
 	$("a").click(function(){
 		var name = $(this).attr("name")
@@ -14,6 +15,7 @@ $(document).ready(function(){
 				break;
 			case "category":
 //				alert("分类");
+				$("#iframepage").attr("src","classifyPage.html");
 				break;
 			case "release":
 //				alert("发布");
