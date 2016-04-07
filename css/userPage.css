@@ -2,6 +2,7 @@ html,body{
 	height: 100%;
 	padding: 0;
 	margin: 0;
+	overflow: hidden;
 }
 
 .contentdiv{
@@ -24,11 +25,12 @@ html,body{
 #headpicture{
 	/*position: relative;*/
 	margin: 0 auto;
-	/*margin-top: 50%;*/
+	margin-top: 45px;
 	height: 100px;
 	width: 100px;
 	border-radius: 50%;
 	background-color: gainsboro;
+	background-image: url(../images/aa.jpg);
 }
 
 #content{
@@ -60,4 +62,39 @@ html,body{
 #contentTable #itemc{
 	width: 50%;
 	border-right: black 1px solid;
+}
+
+img,a,span{
+	display: block;
+}
+
+#contentTable a p{
+	height:70px;
+	margin-bottom: 0;
+	padding-bottom: 0;
+	background-repeat:no-repeat; 
+	background-position:center top;
+	-webkit-background-size:auto 68px;
+	/*-webkit-transition-duration:200ms;*/
+	
+}
+
+.info{
+	background-image: url(../images/info.png);
+}
+
+.goods{
+	background-image: url(../images/goods2.png);
+}
+
+.like{
+	background-image: url(../images/likes.png);
+}
+
+.message{
+	background-image: url(../images/message5.png);
+}
+
+center{
+	opacity: 0.8;
 }
