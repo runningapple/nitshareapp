@@ -10,6 +10,9 @@ html,body{
 	width: 100%;
 	margin: 0;
 	padding: 0;
+	padding-top: 20px;
+	margin-top: 20px;
+	top: 0px;
 	display: block;
 	background-color: #D1EEEE;
 }
@@ -20,7 +23,7 @@ html,body{
 	margin: 0;
 	padding: 0;
 	position: absolute;
-	top: 10px;
+	top: 18px;
 	display: block;
 }
 
@@ -30,11 +33,9 @@ html,body{
 	margin: 0;
 	padding: 0;
 	outline: none;
-	border-top: none;
-	border-left: none;
-	border-right: none;
+	border: none;
 	border-radius: 0%;
-	font-size: 18px;
+	font-size: 100%;
 }
 
 #menuediv{
