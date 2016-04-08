@@ -11,6 +11,7 @@ html,body{
 	margin: 0;
 	padding: 0;
 	display: block;
+	background-color: #D1EEEE;
 }
 
 #searchdiv{
@@ -74,12 +75,12 @@ img,a,span{
 }
 
 #menuetable a p{
-	height: 60px;
+	height: 55px;
 	margin-bottom: 0;
 	padding-bottom: 0;
 	background-repeat:no-repeat;
 	background-position:center top;
-	-webkit-background-size:auto 55px;	
+	-webkit-background-size:auto 50px;	
 }
 
 #hot{
