@@ -1,10 +1,10 @@
 
 $(document).ready(function(){
-	$("#re").tap(function(){
+	$("#re").click(function(){
 		$.mobile.changePage("register.html","slidedown",true,true);
 	});
 	
-	$("#loginbtn").tap(function(){
+	$("#loginbtn").click(function(){
 		var account = $("#account").val();
 		var password = $("#pwd").val();
 		$.ajax({

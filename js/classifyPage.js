@@ -11,4 +11,8 @@ $(document).ready(function(){
 	$("#searchdiv").css("height",contentHeight*0.0618+"px");
 	$("#menuediv").css({"top":"55px","height":contentHeight*0.88+"px"});
 	$("#menuetable").css("height",contentHeight*0.88+"px");
+	
+	$("a").click(function(){
+		window.location.href = "resultPage.html";
+	});
 });
