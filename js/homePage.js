@@ -7,6 +7,10 @@ var myScroll,
 	
 $(document).ready(function(){
 	
+	$(".item").click(function(){
+		window.parent.location.href = "detailPage.html"//"http://1.runningap.applinzi.com/a.html";
+	});
+	
 	function loaded () {
 		pullDownEl = document.getElementById('pullDown');
 		pullDownOffset = pullDownEl.offsetHeight;

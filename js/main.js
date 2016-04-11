@@ -6,6 +6,14 @@ $(document).ready(function(){
 	var myurl = location.href;
 	if (myurl.indexOf("?") > 0){
 		var href = myurl.split("?")[1].split("&")[0].split("=")[1];
+		if ("classifyPage.html" == href){
+			$("#footer_category").attr("checked",true);
+		}else if("homePage.html" == href){
+			$("#footer_home").attr("checked",true);
+		}else if("userPage.html" == href){
+			$("#footer_mine").attr("checked",true);
+		}
+		
 		$("#iframepage").attr("src",href);
 	}
 	
@@ -13,7 +21,7 @@ $(document).ready(function(){
 	FastClick.attach(document.body);
 	
 	$("a").click(function(){
-		var name = $(this).attr("name")
+		var name = $(this).attr("name");
 		radioSelect("#footer_"+name);
 		switch (name){
 			case "home":
