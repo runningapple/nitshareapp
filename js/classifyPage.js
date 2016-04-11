@@ -13,6 +13,9 @@ $(document).ready(function(){
 	$("#menuetable").css("height",contentHeight*0.88+"px");
 	
 	$("a").click(function(){
-		window.location.href = "resultPage.html";
+		var name = "a";
+		var type = "1";
+		/*父页面跳转*/
+		window.parent.location.href = "resultPage.html?name="+name+"&type="+type;
 	});
 });

@@ -7,6 +7,28 @@ var myScroll,
 	
 $(document).ready(function(){
 	
+	var type, name;
+	
+	/*添加输入框失焦事件*/
+	$("#search").blur(function(){
+		var searchText = $("#search").val();
+		if (!(null == searchText || "" == searchText)){
+			type = -1;
+			name = searchText;
+		}
+	});
+	
+	/*读取页面跳转过来携带的参数*/
+	var myurl = location.href;
+	type = myurl.split("?")[1].split("&")[0].split("=")[1];
+	name = myurl.split("?")[1].split("&")[1].split("=")[1];
+	
+	/*返回到上一页面*/
+	$("#backdiv").click(function(){
+		window.history.back(-1);
+	});
+	
+	
 	function loaded () {
 		pullDownEl = document.getElementById('pullDown');
 		pullDownOffset = pullDownEl.offsetHeight;
@@ -22,7 +44,6 @@ $(document).ready(function(){
 			startY: 0,
 			topOffset: pullDownOffset,
 			onScrollMove: function () {
-//				console.log(this.y);
 				if (this.y > 50 && !pullDownEl.className.match('flip')) {
 					pullDownEl.className = 'flip';
 					pullDownEl.querySelector('.pullDownLabel').innerHTML = '松手开始更新...';
@@ -59,20 +80,6 @@ $(document).ready(function(){
 	
 	setTimeout(loaded, 200);
 	
-	var contentWidth = $("#web-view",window.parent.document).width();
-	var contentHeight = $("#web-view",window.parent.document).height()-$("#header",window.parent.document).height()-$("#footer",window.parent.document).height();
-//	alert(contentWidth+" "+contentHeight);
-	$("#thelist").css("width",contentWidth+"px");
-	$("#pullDown").css("width",contentWidth+"px");
-	$("#pullUp").css("width",contentWidth+"px");
-	setupCss();
-	
-	function setupCss(){
-		$(".item").css("height",contentHeight/2.5+"px");
-		$("li").css("padding-left","5px");//除以2可能还不够对称
-	}
-
-
 	function pullDownAction () {
 
 		setTimeout(function () {	// <-- Simulate network congestion, remove setTimeout from production!
@@ -86,11 +93,9 @@ $(document).ready(function(){
 			}
 			
 			myScroll.refresh();		//数据加载完成后，调用界面更新方法   Remember to refresh when contents are loaded (ie: on ajax completion)
-			setupCss();
 		}, 200);	// <-- Simulate network congestion, remove setTimeout from production!
 	}
 	
-	/*记录当前页数*/
 	var pageIndex = parseInt("0");
 	
 	function pullUpAction () {
@@ -102,11 +107,12 @@ $(document).ready(function(){
 				data:{
 					"page": pageIndex,
 					"size": "4",
+					"type": type,
+					"cname": name,
 				},
 				jsonpCallback:'callback',
 				dataType:'jsonp',
 				success:function(data){
-//					alert(data[0].imgUrl0);
 					for (var i = 0; i < data.length; i++){
 						var addtext = '\
 								<li>\
@@ -128,7 +134,6 @@ $(document).ready(function(){
 						
 						$("#thelist").append(addtext);
 						myScroll.refresh();		// 数据加载完成后，调用界面更新方法 Remember to refresh when contents are loaded (ie: on ajax completion)
-						setupCss();
 					}
 					pageIndex++;
 				},
@@ -138,7 +143,7 @@ $(document).ready(function(){
 			});
 		}, 200);	// <-- Simulate network congestion, remove setTimeout from production!
 	}
-
+	
 	function refreshAction(){
 		if (pullDownFlag == 1){
 			pullDownAction();
@@ -150,5 +155,5 @@ $(document).ready(function(){
 			pullUpFlag = 0;
 		}
 	}
-
+	
 });
