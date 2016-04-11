@@ -13,9 +13,17 @@ $(document).ready(function(){
 	$("#menuetable").css("height",contentHeight*0.88+"px");
 	
 	$("a").click(function(){
-		var name = "a";
-		var type = "1";
+		var name = null;
+		var type = $(this).attr("name");
 		/*父页面跳转*/
 		window.parent.location.href = "resultPage.html?name="+name+"&type="+type;
+	});
+	
+	$("#goodsname").blur(function(){
+		var name = $("#goodsname").val();
+		if (!(null == name || "" == name)){
+			var type = "-1";
+			window.parent.location.href = "resultPage.html?name="+name+"&type="+type;
+		}		
 	});
 });

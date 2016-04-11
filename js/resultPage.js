@@ -8,24 +8,30 @@ var myScroll,
 $(document).ready(function(){
 	
 	var type, name;
+	var pageIndex = parseInt("0");
 	
 	/*添加输入框失焦事件*/
 	$("#search").blur(function(){
 		var searchText = $("#search").val();
 		if (!(null == searchText || "" == searchText)){
-			type = -1;
+			type = "-1";
 			name = searchText;
+			pullDownAction();
 		}
 	});
 	
 	/*读取页面跳转过来携带的参数*/
 	var myurl = location.href;
-	type = myurl.split("?")[1].split("&")[0].split("=")[1];
+	type = decodeURI(myurl.split("?")[1].split("&")[0].split("=")[1]);
 	name = myurl.split("?")[1].split("&")[1].split("=")[1];
+	
+	pullDownAction();
 	
 	/*返回到上一页面*/
 	$("#backdiv").click(function(){
-		window.history.back(-1);
+//		window.history.back(-1);
+		window.location.href = "main.html?index=classifyPage.html";
+//		$("#iframepage").attr("src","classifyPage.html");
 	});
 	
 	
@@ -81,34 +87,23 @@ $(document).ready(function(){
 	setTimeout(loaded, 200);
 	
 	function pullDownAction () {
-
-		setTimeout(function () {	// <-- Simulate network congestion, remove setTimeout from production!
-			var el, li, i;
-			el = document.getElementById('thelist');
-
-			for (i=0; i<3; i++) {
-				li = document.createElement('li');
-				li.innerText = 'Generated row ' + (++generatedCount);
-				el.insertBefore(li, el.childNodes[0]);
-			}
-			
-			myScroll.refresh();		//数据加载完成后，调用界面更新方法   Remember to refresh when contents are loaded (ie: on ajax completion)
-		}, 200);	// <-- Simulate network congestion, remove setTimeout from production!
+		pageIndex = parseInt("0");
+		$("#thelist").empty();
+		pullUpAction();
 	}
 	
-	var pageIndex = parseInt("0");
 	
 	function pullUpAction () {
 		setTimeout(function () {	// <-- Simulate network congestion, remove setTimeout from production!
 			$.ajax({
 				type:"get",
-				url:"http://192.168.0.198:8080/nitshare/serve/commodity.get",
+				url:"http://192.168.0.198:8080/nitshare/serve/commodity.fuzzy",
 				async:true,//异步刷新
 				data:{
 					"page": pageIndex,
 					"size": "4",
 					"type": type,
-					"cname": name,
+					"name": name,
 				},
 				jsonpCallback:'callback',
 				dataType:'jsonp',
@@ -144,16 +139,5 @@ $(document).ready(function(){
 		}, 200);	// <-- Simulate network congestion, remove setTimeout from production!
 	}
 	
-	function refreshAction(){
-		if (pullDownFlag == 1){
-			pullDownAction();
-			pullDown.innerHTML = 'on';
-			pullDownFlag = 0;
-		}else if (pullUpFlag == 1){
-			pullUpAction();
-			pullUp.innerHTML = 'on';
-			pullUpFlag = 0;
-		}
-	}
 	
 });

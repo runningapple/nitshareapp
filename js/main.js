@@ -2,6 +2,13 @@ document.addEventListener('touchmove', function (e) { e.preventDefault(); }, fal
 
 $(document).ready(function(){
 	
+	/*当从二级页面回到一级页面的时候需要判断回到那个一级页面*/
+	var myurl = location.href;
+	if (myurl.indexOf("?") > 0){
+		var href = myurl.split("?")[1].split("&")[0].split("=")[1];
+		$("#iframepage").attr("src",href);
+	}
+	
 	$("body").css("height",$(window).height());
 	FastClick.attach(document.body);
 	
