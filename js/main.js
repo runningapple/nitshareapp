@@ -37,10 +37,46 @@ $(document).ready(function(){
 				break;
 			case "mine":
 //				alert("个人");
-				$("#iframepage").attr("src","userPage.html");
+				jumpByname();
+//				$("#iframepage").attr("src","userPage.html");
 				break;
 		}
 	});
+	
+	function jumpByname(){
+		if (null == localStorage.account){
+			/*如果本地没有存储用户登录的数据则跳转到登录界面*/
+			window.location.href = "login.html";
+		} else{
+			if (true == isUserLogin()){
+				/*如果本地存储了用户登录记录，则判断服务器上是记录了用户登录的数据，如果没有则跳转到登录界面*/
+				localStorage.account = null;
+				window.location.href = "login.html";
+			}else{
+				$("#iframepage").attr("src","userPage.html");
+			}
+		}
+	}
+	
+	function isUserLogin(){
+		$.ajax({
+			type:"get",
+			url:"http://192.168.0.198:8080/nitshare/serve/user.islogin",
+			async:true,//异步刷新
+			data:{
+				"account": localStorage.account,
+			},
+			jsonpCallback:'callback',
+			dataType:'jsonp',
+			success:function(data){
+				if (data.length == 1) return true;
+				else return false;
+			},
+			error:function(XMLHttpRequest, textStatus, errorThrown, data){
+				alert(errorThrown);
+			}
+		});
+	}
 	
 	/**
 	 * 绑定<a>和<radiobutton>

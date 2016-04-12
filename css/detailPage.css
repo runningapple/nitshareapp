@@ -48,24 +48,6 @@ html,body{
 	font-size: 15px;
 }
 
-#slide1{
-	background-image: url(../images/aa.jpg);
-	background-repeat:no-repeat;
-	background-position:center;
-}
-
-#slide2{
-	background-image: url(../images/aa.jpg);
-	background-repeat:no-repeat;
-	background-position:center;
-}
-
-#slide3{
-	background-image: url(../images/aa.jpg);
-	background-repeat:no-repeat;
-	background-position:center;
-}
-
 #web_view .showdiv{
 	height: 40%;
 	width: 100%;

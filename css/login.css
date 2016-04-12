@@ -80,6 +80,7 @@ input[type="password"] {
 	margin-bottom: 0%;
 	font-size: 100%;
 	color: #555;
+	border-radius: 0%;
 }
 
 input[type="password"] {
@@ -96,9 +97,10 @@ input[type="button"] {
 	font-size: 100%;
 	height: 80%;
 	margin-top: 3%;
-	background-color: #0000FF;
+	background-color: #4876FF;
 	color: #FFFFFF;
 	border-radius: 12px;
+	border: none;
 }
 
 input[type="button"]:hover {

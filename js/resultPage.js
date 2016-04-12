@@ -22,8 +22,8 @@ $(document).ready(function(){
 	
 	/*读取页面跳转过来携带的参数*/
 	var myurl = location.href;
-	type = decodeURI(myurl.split("?")[1].split("&")[0].split("=")[1]);
-	name = myurl.split("?")[1].split("&")[1].split("=")[1];
+	name = myurl.split("?")[1].split("&")[0].split("=")[1];
+	type = decodeURI(myurl.split("?")[1].split("&")[1].split("=")[1]);
 	
 	pullDownAction();
 	
@@ -34,6 +34,12 @@ $(document).ready(function(){
 //		$("#iframepage").attr("src","classifyPage.html");
 	});
 	
+	/*页面跳转函数*/
+	function jump(){
+		$(".item").click(function(){
+			window.parent.location.href = "detailPage.html?id="+$(this).attr("name")+"&back=1";//"http://1.runningap.applinzi.com/a.html";
+		});		
+	}
 	
 	function loaded () {
 		pullDownEl = document.getElementById('pullDown');
@@ -101,7 +107,7 @@ $(document).ready(function(){
 				async:true,//异步刷新
 				data:{
 					"page": pageIndex,
-					"size": "4",
+					"size": "6",
 					"type": type,
 					"name": name,
 				},
@@ -111,7 +117,7 @@ $(document).ready(function(){
 					for (var i = 0; i < data.length; i++){
 						var addtext = '\
 								<li>\
-									<div class="item">\
+									<div class="item" name="'+data[i].id+'">\
 										<div class="itempic">\
 											<img src="'+data[i].imgUrl0+'"/>\
 										</div>\
@@ -131,6 +137,7 @@ $(document).ready(function(){
 						myScroll.refresh();		// 数据加载完成后，调用界面更新方法 Remember to refresh when contents are loaded (ie: on ajax completion)
 					}
 					pageIndex++;
+					jump();//初始化跳转函数
 				},
 				error:function(XMLHttpRequest, textStatus, errorThrown, data){
 					alert(errorThrown);

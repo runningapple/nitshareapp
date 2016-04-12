@@ -7,9 +7,12 @@ var myScroll,
 	
 $(document).ready(function(){
 	
-	$(".item").click(function(){
-		window.parent.location.href = "detailPage.html"//"http://1.runningap.applinzi.com/a.html";
-	});
+	/*页面跳转函数*/
+	function jump(){
+		$(".item").click(function(){
+			window.parent.location.href = "detailPage.html?id="+$(this).attr("name");//"http://1.runningap.applinzi.com/a.html";
+		});		
+	}
 	
 	function loaded () {
 		pullDownEl = document.getElementById('pullDown');
@@ -114,7 +117,7 @@ $(document).ready(function(){
 					for (var i = 0; i < data.length; i++){
 						var addtext = '\
 								<li>\
-									<div class="item">\
+									<div class="item" name="'+data[i].id+'">\
 										<div class="itempic">\
 											<img src="'+data[i].imgUrl0+'"/>\
 										</div>\
@@ -135,24 +138,13 @@ $(document).ready(function(){
 						setupCss();
 					}
 					pageIndex++;
+					jump();//初始化跳转函数
 				},
 				error:function(XMLHttpRequest, textStatus, errorThrown, data){
-					alert(errorThrown);
+					alert("亲，暂时还没有数据哦");
 				}
 			});
 		}, 200);	// <-- Simulate network congestion, remove setTimeout from production!
-	}
-
-	function refreshAction(){
-		if (pullDownFlag == 1){
-			pullDownAction();
-			pullDown.innerHTML = 'on';
-			pullDownFlag = 0;
-		}else if (pullUpFlag == 1){
-			pullUpAction();
-			pullUp.innerHTML = 'on';
-			pullUpFlag = 0;
-		}
 	}
 
 });
