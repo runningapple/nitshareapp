@@ -3,13 +3,54 @@
 	<head>
 		<meta charset="UTF-8">
 		<link rel="stylesheet" href="css/detailPage.css" />
+		<link rel="stylesheet" href="css/swiper-3.3.1.min.css" />
 		<script type="text/javascript" src="js/jquery-1.8.3.min.js" ></script>
 		<title></title>
 	</head>
 	<body>
-<!-- UY BEGIN -->
-<div id="uyan_frame"></div>
-<script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2094726"></script>
-<!-- UY END -->
+		<div id="web_view">
+			<div id="header">
+				<div id="backdiv">
+					<img src="images/arrow_left.png" />
+				</div>
+				<p>商品详情</p>
+			</div>
+			<div class="showdiv swiper-container">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide" id="slide1"></div>
+					<div class="swiper-slide" id="slide2"></div>
+					<div class="swiper-slide" id="slide3"></div>
+				</div>
+				<div class="swiper-pagination"></div>
+			</div>
+			<div class="desdiv">
+				<div id="des">
+					<p>很可爱的一只小猫，会卖萌,会打架，会抓老鼠，很是厉害，希望有爱猫的同学来看看</p>
+				</div>
+				<div id="price">
+					<p>￥120.5</p>
+				</div>
+				<div id="area">
+					<p>老食堂</p>
+				</div>
+				<div id="seller">
+					<p>runningapple</p>
+				</div>
+				<!--<div id="pubtime">
+					<p>2016-03-04</p>
+				</div>-->
+			</div>
+			<div class="contactdiv">
+				<p>联系卖家</p>
+			</div>
+			<div class="commentdiv">
+				<!-- UY BEGIN -->
+				<div id="uyan_frame"></div>
+				<script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2094726"></script>
+				<!-- UY END -->
+			</div>
+		</div>
+		<script type="text/javascript" src="js/swiper-3.3.1.jquery.min.js" ></script>
+		<script type="text/javascript" src="js/detailPage.js" ></script>
 	</body>
 </html>

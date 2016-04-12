@@ -1,0 +1,184 @@
+html,body{
+	height: 100%;
+	padding: 0;
+	margin: 0;
+	overflow: hidden;
+	
+	/*页面上的字不可选中*/
+ 	-webkit-user-select:none; 
+ 	-moz-user-select:none;
+ 	-ms-user-select:none;
+ 	user-select:none;
+}
+
+#web_view{
+	height: 100%;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+}
+
+#web_view #header{
+	height: 5%;
+	width: 100%;
+	background-color: #FFFAFA;	
+}
+
+#web_view #header #backdiv{
+	float: left;
+	height: 100%;
+	width: 10%;
+	top: 0;
+	margin: 0;
+	padding-left: 2px;
+	padding-right: 5px;	
+}
+
+#web_view #header #backdiv img{
+	height: 100%;
+	width: 100%;
+}
+
+#web_view #header p{
+	position: absolute;
+	left: 40%;
+	margin: 0;
+	padding-top: 5px;
+	font-family: "宋体";
+	font-size: 15px;
+}
+
+#slide1{
+	background-image: url(../images/aa.jpg);
+	background-repeat:no-repeat;
+	background-position:center;
+}
+
+#slide2{
+	background-image: url(../images/aa.jpg);
+	background-repeat:no-repeat;
+	background-position:center;
+}
+
+#slide3{
+	background-image: url(../images/aa.jpg);
+	background-repeat:no-repeat;
+	background-position:center;
+}
+
+#web_view .showdiv{
+	height: 40%;
+	width: 100%;
+	text-align: center;
+	background-color: white;
+}
+
+#web_view .desdiv{
+	height: 20%;
+	width: 100%;
+	text-align: center;
+	background-color: white;
+}
+
+#web_view .desdiv #des{
+	height: 31%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	background-color: #EBEBEB;
+}
+
+#web_view .desdiv #des p{
+	margin: 0;
+	padding: 0;
+	padding-top: 2%;
+}
+
+#web_view .desdiv #price{
+	height: 23%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	background-color: #EBEBEB;	
+
+}
+
+#web_view .desdiv #price p{
+	margin: 0;
+	padding: 0;
+	padding-top: 5px;
+	font-size: 18px;
+	color: #EB5055;
+	font-weight: bold;		
+}
+
+#web_view .desdiv #area{
+	height: 23%;
+	width: 100%;
+	background-color: #EBEBEB;
+}
+
+#web_view .desdiv #area p{
+	margin: 0;
+	padding: 0;
+	padding-top: 5px;
+	font-size: 18px;
+	color: #666666;
+	font-family: "宋体";			
+}
+
+#web_view .desdiv #seller{
+	height: 23%;
+	width: 100%;
+	background-color: #EBEBEB;
+
+}
+
+#web_view .desdiv #seller p{
+	margin: 0;
+	padding: 0;
+	padding-top: 5px;
+	font-size: 18px;
+	color: #00B2EE;
+	font-family: "宋体";		
+}
+
+#web_view .contactdiv{
+	height: 5%;
+	width: 100%;
+	text-align: center;
+	background-color: #66CD00;	
+}
+
+#web_view .contactdiv p{
+	margin: 0;
+	padding: 0;
+	padding-top: 5px;
+	color: #8B864E;
+}
+
+#web_view .commentdiv{
+	height: 30%;
+	width: 100%;
+	text-align: center;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}

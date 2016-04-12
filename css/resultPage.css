@@ -3,6 +3,11 @@ html,body{
 	padding: 0;
 	margin: 0;
 	overflow: hidden;
+	/*页面上的字不可选中*/
+ 	-webkit-user-select:none; 
+ 	-moz-user-select:none; 
+ 	-ms-user-select:none; 
+ 	user-select:none;		
 }
 
 #web-view{
