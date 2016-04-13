@@ -1,6 +1,25 @@
+html,body{
+	height: 100%;
+	padding: 0;
+	margin: 0;
+	overflow: hidden;
+}
 /**
  * 标题样式
  */
+
+#back{
+	position: absolute;
+	height: 10%;
+	width: 10%;
+	font-size: 50px;
+	font-weight: bold;
+	top: 0;
+	left: 0;
+	margin: 0;
+	padding: 0;
+}
+
 
 .page > .titlediv {
 	-webkit-flex: 1.1;

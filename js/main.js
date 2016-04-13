@@ -46,12 +46,12 @@ $(document).ready(function(){
 	function jumpByname(){
 		if (null == localStorage.account){
 			/*如果本地没有存储用户登录的数据则跳转到登录界面*/
-			window.location.href = "login.html";
+			window.location.href = "registerPage.html";
 		} else{
 			if (true == isUserLogin()){
 				/*如果本地存储了用户登录记录，则判断服务器上是记录了用户登录的数据，如果没有则跳转到登录界面*/
 				localStorage.account = null;
-				window.location.href = "login.html";
+				window.location.href = "register.html";
 			}else{
 				$("#iframepage").attr("src","userPage.html");
 			}

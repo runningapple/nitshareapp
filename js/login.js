@@ -2,7 +2,8 @@ document.addEventListener('touchmove', function (e) { e.preventDefault(); }, fal
 
 $(document).ready(function(){
 	
-	$("#backbtn").click(function(){
+	/*返回一级页面*/
+	$("#back").click(function(){
 		window.location.href = "main.html?index=homePage.html";
 	});
 	
