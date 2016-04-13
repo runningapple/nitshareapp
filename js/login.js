@@ -4,7 +4,7 @@ $(document).ready(function(){
 	
 	/*返回一级页面*/
 	$("#back").click(function(){
-		window.location.href = "main.html?index=homePage.html";
+		window.location.href = "registerPage.html";//main.html?index=homePage.html
 	});
 	
 	$("#loginbtn").click(function(){
