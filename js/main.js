@@ -34,6 +34,7 @@ $(document).ready(function(){
 				break;
 			case "release":
 //				alert("发布");
+				window.location.href = "releasePage.html";
 				break;
 			case "mine":
 //				alert("个人");

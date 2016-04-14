@@ -96,6 +96,7 @@ html,body{
 input[type="text"],
 input[type="password"] {
 	width: 90%;
+	border-color: gainsboro;
 	border-left: hidden;
 	border-right: hidden;
 	padding: 0%;

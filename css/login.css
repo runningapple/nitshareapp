@@ -91,6 +91,7 @@ html,body{
 
 input[type="text"],
 input[type="password"] {
+	border-color: gainsboro;
 	width: 90%;
 	border-left: hidden;
 	border-right: hidden;
@@ -120,6 +121,7 @@ input[type="button"] {
 	color: #FFFFFF;
 	border-radius: 12px;
 	border: none;
+	outline: none;
 }
 
 input[type="button"]:hover {
