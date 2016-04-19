@@ -5,6 +5,7 @@
 		<link rel="stylesheet" href="css/releasePage.css" />
 		<link rel="stylesheet" href="css/swiper-3.3.1.min.css" />
 		<script type="text/javascript" src="js/jquery-1.8.3.min.js" ></script>
+		<script type="text/javascript" src="js/jquery-form.js" ></script>
 		<title></title>
 	</head>
 	<body>
@@ -13,14 +14,19 @@
 				<p id="backhome">&lt;</p><center>发布</center>
 			</div>
 			<div id="main">
-				<form>
+				<div id="form_content">
 					<div id="namediv">
 						<input id="name" type="text" placeholder="宝贝名" />
 						<input type="text" placeholder="宝贝描述" />
 					</div>
-					<div id="picdiv">
-						<center>宝贝图片上传</center>
-					</div>
+					<form id="picdiv" name="picdiv" method="post" action="#" enctype="multipart/form-data">
+						<input id="filepic" type="file" name="filepic" hidden="hidden" accept="image/png,image/gif,image/jpg,image/jpeg"/>
+						<!--<input id="file_two" type="file" name="picdoc_one" hidden="hidden" accept="image/png,image/gif,image/jpg,image/jpeg"/>-->
+						<!--<input id="file_three" type="file" name="picdoc_one" hidden="hidden" accept="image/png,image/gif,image/jpg,image/jpeg"/>-->
+						<div id="sub_pic_one" class="sub_pic">图片一</div>
+						<div id="sub_pic_two" class="sub_pic">图片二</div>
+						<div id="sub_pic_three" class="sub_pic">图片三</div>
+					</form>
 					<div id="areadiv">
 						<input id="area" type="text" placeholder="交易地点" />
 						<input id="price" type="text" placeholder="价格"/>
@@ -50,7 +56,7 @@
 					<div id="releasediv">
 						<input type="button" id="releasebtn" value="发布" />
 					</div>
-				</form>
+				</div>
 			</div>
 		</div>
 		<script type="text/javascript" src="js/swiper-3.3.1.jquery.min.js" ></script>

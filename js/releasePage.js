@@ -15,4 +15,47 @@ $(document).ready(function(){
     	window.location.href = "main.html?index=homePage.html";
     });
     
+    $("#sub_pic_one,#sub_pic_two,#sub_pic_three").click(function(){
+    	$("#filepic").trigger("click");
+    });
+//  
+//  $("#sub_pic_two").click(function(){
+//  	$("#file_two").trigger("click");
+//  });
+//
+//  $("#sub_pic_three").click(function(){
+//  	$("#file_three").trigger("click");
+//  });
+    
+    /**
+     * 如果图片改变则上传图片到服务器，并返回图片地址
+     */
+    $("#filepic").change(function(){
+//  	alert($(this).val());
+	    $("#picdiv").ajaxSubmit({
+	    	type: "POST",
+	    	url: "http://localhost:8080/nitshare/serve/uploadfile",
+	    	dataType: "jsonp",
+			jsonpCallback:'callback',
+	    	success: function(data){
+	    		alert("in");
+	    	},
+	    	error: function(XmlHttpRequest,textStatus,errorThrown){
+	    		alert("error");
+	    	}
+	    });
+//		var options = {
+//			url: "http://localhost:8080/nitshare/serve/uploadfile",
+//			type: "POST",
+//			dataType: "jsonp",
+//			jsonpCallback:'callback',
+//		};
+//		
+//		$("#picdiv").submit(function(){
+//			$(this).ajaxSubmit(options);
+//			return false;
+//		});
+	});
+
+    
 });
