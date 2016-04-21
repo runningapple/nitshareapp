@@ -22,7 +22,7 @@ $(document).ready(function(){
 	$("#goodsname").blur(function(){
 		var name = $("#goodsname").val();
 		if (!(null == name || "" == name)){
-			var type = "其它";
+			var type = "-1";
 			window.parent.location.href = "resultPage.html?name="+name+"&type="+type;
 		}		
 	});

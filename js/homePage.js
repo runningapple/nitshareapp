@@ -10,7 +10,7 @@ $(document).ready(function(){
 	/*页面跳转函数*/
 	function jump(){
 		$(".item").click(function(){
-			window.parent.location.href = "detailPage.html?id="+$(this).attr("name");//"http://1.runningap.applinzi.com/a.html";
+			window.parent.location.href = "detailPage.html?id="+$(this).attr("name")+"&back=1";//"http://1.runningap.applinzi.com/a.html";
 		});		
 	}
 	

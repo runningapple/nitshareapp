@@ -24,8 +24,8 @@ $(document).ready(function(){
 	var myurl = location.href;
 	name = myurl.split("?")[1].split("&")[0].split("=")[1];
 	type = decodeURI(myurl.split("?")[1].split("&")[1].split("=")[1]);
+//	alert(type);
 	
-	pullDownAction();
 	
 	/*返回到上一页面*/
 	$("#backdiv").click(function(){
@@ -91,6 +91,8 @@ $(document).ready(function(){
 	}
 	
 	setTimeout(loaded, 200);
+	pullDownAction();
+	
 	
 	function pullDownAction () {
 		pageIndex = parseInt("0");
@@ -108,8 +110,8 @@ $(document).ready(function(){
 				data:{
 					"page": pageIndex,
 					"size": "6",
-					"type": type,
-					"name": name,
+					"type": type.trim(),
+					"name": name.trim(),
 				},
 				jsonpCallback:'callback',
 				dataType:'jsonp',
