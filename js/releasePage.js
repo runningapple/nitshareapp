@@ -34,7 +34,7 @@ $(document).ready(function(){
 //  	alert($(this).val());
 	    $("#picdiv").ajaxSubmit({
 	    	type: "POST",
-	    	url: "http://localhost:8080/nitshare/serve/uploadfile",
+	    	url: "http://115.28.73.144:8080/nitshare/serve/uploadfile",
 	    	dataType: "jsonp",
 			jsonpCallback:'callback',
 	    	success: function(data){

@@ -15,7 +15,7 @@ $(document).ready(function(){
 			
 			/*这里需要进行跨域请求，论文里可以加以展开说明*/
 //			url:"http://localhost:8080/nitshare/serve/test",
-			url:"http://192.168.0.198:8080/nitshare/serve/user.login",
+			url:"http://115.28.73.144:8080/nitshare/serve/user.login",
 			async:false,/*同步*/
 			jsonpCallback:'callback',
 			data:{

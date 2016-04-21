@@ -29,7 +29,7 @@ $(document).ready(function(){
 		
 		$.ajax({
 			type:"GET",
-			url:"http://192.168.0.198:8080/nitshare/serve/user.register",
+			url:"http://115.28.73.144:8080/nitshare/serve/user.register",
 			async:false,/*同步*/
 			jsonpCallback:'callback',
 			data:{

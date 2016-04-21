@@ -62,7 +62,7 @@ $(document).ready(function(){
 	function isUserLogin(){
 		$.ajax({
 			type:"get",
-			url:"http://192.168.0.198:8080/nitshare/serve/user.islogin",
+			url:"http://115.28.73.144:8080/nitshare/serve/user.islogin",
 			async:true,//异步刷新
 			data:{
 				"account": localStorage.account,

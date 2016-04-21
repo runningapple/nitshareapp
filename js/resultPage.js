@@ -103,7 +103,7 @@ $(document).ready(function(){
 		setTimeout(function () {	// <-- Simulate network congestion, remove setTimeout from production!
 			$.ajax({
 				type:"get",
-				url:"http://192.168.0.198:8080/nitshare/serve/commodity.fuzzy",
+				url:"http://115.28.73.144:8080/nitshare/serve/commodity.fuzzy",
 				async:true,//异步刷新
 				data:{
 					"page": pageIndex,

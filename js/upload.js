@@ -3,7 +3,7 @@ $(document).ready(function(){
 	
 	function ajaxFileUpload(){
 		$.ajaxFileUpload({
-			url: 'http://localhost:8080/nitshare/serve/uploadfile',
+			url: 'http://115.28.73.144:8080/nitshare/serve/uploadfile',
 			secureuri:false,
 			fileElementId:'picfile',
 			dataType: 'json',
