@@ -27,6 +27,7 @@ $(document).ready(function(){
 				//alert(data[0].id);
 				if (data.length == 1){
 					localStorage.account = data[0].account;
+					localStorage.id = data[0].id;
 					window.location.href = "main.html?index=userPage.html";
 				}else{
 					alert("账号不存在");
@@ -34,8 +35,6 @@ $(document).ready(function(){
 			},
 			error : function(XMLHttpRequest, textStatus, errorThrown, data){
 				alert("本宝宝不开心了");
-//				$.mobile.changePage("register.html","slidedown",true,true);
-				//alert(errorThrown);
 			}
 		});
 	});

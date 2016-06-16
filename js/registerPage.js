@@ -42,6 +42,7 @@ $(document).ready(function(){
 				//alert(data[0].id);
 				if (data.length == 1){
 					localStorage.account = data[0].account;
+					localStorage.id = data[0].id;
 					window.location.href = "main.html?index=userPage.html";
 				}else{
 					alert("好像有哪里不对");

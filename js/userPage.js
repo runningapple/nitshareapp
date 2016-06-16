@@ -14,4 +14,28 @@ $(document).ready(function(){
 	$("#header").css("height",contentHeight*0.4+"px");
 	$("#content").css({"top":contentHeight*0.4+"px","height":contentHeight*0.63+"px"});
 	$("#contentTable").css("height",contentHeight*0.63+"px");
+	
+	$("#logout").click(function(){
+		
+		$.ajax({
+			type:"get",
+			url:"http://115.28.73.144:8080/nitshare/serve/user.logout",
+			async:true,//异步刷新
+			data:{
+				"account": localStorage.account,
+			},
+			jsonpCallback:'callback',
+			dataType:'jsonp',
+			success:function(data){
+				localStorage.account = null;
+				localStorage.id = null;
+//				window.location.href = "main.html?page=homePage.html";
+				top.location = "main.html?page=homePage.html";
+			},
+			error:function(XMLHttpRequest, textStatus, errorThrown, data){
+				alert(errorThrown);
+			}
+		});
+
+	});
 });

@@ -79,26 +79,15 @@ $(document).ready(function(){
 		$("li").css("padding-left","5px");//除以2可能还不够对称
 	}
 
-
+	var pageIndex = parseInt("0");
+	pullUpAction();
 	function pullDownAction () {
 
-		setTimeout(function () {	// <-- Simulate network congestion, remove setTimeout from production!
-			var el, li, i;
-			el = document.getElementById('thelist');
-
-			for (i=0; i<3; i++) {
-				li = document.createElement('li');
-				li.innerText = 'Generated row ' + (++generatedCount);
-				el.insertBefore(li, el.childNodes[0]);
-			}
-			
-			myScroll.refresh();		//数据加载完成后，调用界面更新方法   Remember to refresh when contents are loaded (ie: on ajax completion)
-			setupCss();
-		}, 200);	// <-- Simulate network congestion, remove setTimeout from production!
+		pullUpAction();
 	}
 	
 	/*记录当前页数*/
-	var pageIndex = parseInt("0");
+	
 	
 	function pullUpAction () {
 		setTimeout(function () {	// <-- Simulate network congestion, remove setTimeout from production!
@@ -108,7 +97,7 @@ $(document).ready(function(){
 				async:true,//异步刷新
 				data:{
 					"page": pageIndex,
-					"size": "4",
+					"size": "6",
 				},
 				jsonpCallback:'callback',
 				dataType:'jsonp',

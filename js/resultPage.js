@@ -111,7 +111,7 @@ $(document).ready(function(){
 					"page": pageIndex,
 					"size": "6",
 					"type": type.trim(),
-					"name": name.trim(),
+					"name": "'"+name.trim()+"'",
 				},
 				jsonpCallback:'callback',
 				dataType:'jsonp',
